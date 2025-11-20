@@ -1,21 +1,32 @@
 global:
-  scrape_interval: 15s # Default scrape interval
+  scrape_interval: 5s
+  evaluation_interval: 5s
 
 scrape_configs:
-  - job_name: 'prometheus'
+
+  # ---------------------------------------
+  # FOODFAST PROJECT
+  # ---------------------------------------
+  - job_name: "foodfast"
+    metrics_path: "/metrics"
+    scheme: "https"
     static_configs:
-      - targets: ['localhost:9090']
+      - targets:
+          - "foodfast-production.up.railway.app"
+        labels:
+          namespace: "foodfast"
+          project: "foodfast"
 
-  # - job_name: 'example_api'
-  #   scheme: http
-  #   static_configs:
-  #     - targets: ['example_api:9091']
+  # ---------------------------------------
+  # FOG PROJECT (SGU ĐỒ ÁN KTPM)
+  # ---------------------------------------
+  - job_name: "fog"
+    metrics_path: "/metrics"
+    scheme: "https"
+    static_configs:
+      - targets:
+          - "sgu25doanktpm-production.up.railway.app"
+        labels:
+          namespace: "fog"
+          project: "fog"
 
-  #  ? TODO: add your services here
-  # - job_name: 'your-job-name'
-  #   scheme: https
-  #   static_configs:
-  #     - targets: ['URL_GOES_HERE']
-  #   basic_auth:
-  #     username: HTTP_AUTH_USERNAME_GOES_HERE
-  #     password: HTTP_AUTH_PASSWORD_GOES_HERE

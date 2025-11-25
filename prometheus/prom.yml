@@ -30,15 +30,4 @@ scrape_configs:
           namespace: "fog"
           project: "fog"
 
-  # ---------------------------------------
-  # FOODFAST CICD EXPORTER
-  # ---------------------------------------
-  - job_name: "foodfastcicd"
-    metrics_path: "/metrics"
-    scheme: "http"
-    static_configs:
-      - targets:
-          - "3.83.237.242:5000"
-        labels:
-          namespace: "foodfastcicd"
-          project: "foodfastcicd"
+

@@ -12,7 +12,7 @@ scrape_configs:
     scheme: "https"
     static_configs:
       - targets:
-          - "foodfast-production.up.railway.app"
+          - "foodfast-production-190a.up.railway.app"
         labels:
           namespace: "foodfast"
           project: "foodfast"
@@ -25,7 +25,7 @@ scrape_configs:
     scheme: "https"
     static_configs:
       - targets:
-          - "sgu25doanktpm-production.up.railway.app"
+          - "sgu25doanktpm-production-6c01.up.railway.app"
         labels:
           namespace: "fog"
           project: "fog"
